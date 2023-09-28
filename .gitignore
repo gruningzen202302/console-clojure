@@ -12,3 +12,60 @@ pom.xml.asc
 .lein-failures
 .nrepl-port
 .cpcache/
+
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# Leiningen build files
+target/
+pom.xml
+pom.xml.asc
+*.jar
+*.class
+
+# Temporary files created by the JVM or Leiningen
+.lein-deps-sum
+.lein-repl-history
+.lein-plugins/
+.lein-failures
+.repl/repl-port
+
+# IntelliJ IDEA files
+.idea/
+*.iml
+
+# Eclipse files
+.classpath
+.project
+
+# Counterclockwise IDE for Eclipse files
+.settings/
+
+# OS-specific and editor backup files
+*~
+.DS_Store
+Thumbs.db
+
+# Clojure CLR related files
+ClojureRepl/*.user.clj
+
+.clj-kondo/
+
+db.transit.json
