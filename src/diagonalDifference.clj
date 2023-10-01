@@ -35,19 +35,19 @@ arr
 
 (Math/abs(sum-array-difference 3 arr))
 
-(defn diagonalDifference [num arr]
+(defn diagonalDifference [arr]
   (let [result 
         (abs
         (apply +
                (for [item (range (count arr))] 
                  (- 
-                  (nth (nth arr item) (- (- num 1) item)) 
+                  (nth (nth arr item) (- (- (count arr) 1) item)) 
                   (nth (nth arr item) item)
                   )
     )))] result))
   
 
-(diagonalDifference 3 arr)
+(diagonalDifference arr)
 
 (for [item (range (count (nth arr 0)))]
   (println item))
