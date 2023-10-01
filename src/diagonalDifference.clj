@@ -7,17 +7,12 @@
 arr
 (defn repeat-n [numtimes arr outer-item]
   (dotimes [inner-item numtimes] 
-    (def inner-vector (nth arr outer-item))
+    (let [ inner-vector (nth arr outer-item)] 
     (cond (= outer-item inner-item) 
-          (println 
-           (str  
-            " INNER T (" outer-item " " inner-item ")"  
-            (nth inner-vector inner-item))) 
-          :else 
-          (println 
-           " ";(str "INNER F" outer-item " - " inner-item)
-           )
+          (nth inner-vector inner-item)
+          :else 0
           )
+      inner-vector)
 ))
 
 (repeat-n 3 [10 [10 50 30] 30] 1)
