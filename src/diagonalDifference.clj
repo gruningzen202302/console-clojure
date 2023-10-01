@@ -19,11 +19,25 @@ arr
 
 (apply + (vertical 3 arr)) 
 
-(defn diagonal-difference [num outer-arr]
+(defn sum-array-difference [num outer-arr]
   (let [left-to-right (apply + (vertical num outer-arr))
         right-to-left (apply + (vertical num (reverse outer-arr)))]
     (- left-to-right right-to-left)
     )
   )
 
-(Math/abs(diagonal-difference 3 arr))
+(Math/abs(sum-array-difference 3 arr))
+
+(defn diagonalDifference [num outer-arr]
+  (let [differ 
+        (abs
+        (apply +
+               (for [item (range num)] 
+                 (- 
+                  (nth (nth outer-arr item) (- (- num 1) item)) 
+                  (nth (nth outer-arr item) item)
+                  )
+    )))] differ))
+  
+
+(diagonalDifference 3 arr)
