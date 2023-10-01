@@ -69,3 +69,4 @@ ClojureRepl/*.user.clj
 .clj-kondo/
 
 db.transit.json
+.calva/output-window/output.calva-repl
