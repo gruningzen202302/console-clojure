@@ -4,6 +4,13 @@
           [4 5 6] 
           [10 8 -12]])
 
+(def arr02[
+           [1 0 1]
+           [0 1 0]
+           [1 0 1]
+           ])
+
+
 arr
 
 (defn get-sum [numtimes the-vector outer-item]
@@ -28,16 +35,19 @@ arr
 
 (Math/abs(sum-array-difference 3 arr))
 
-(defn diagonalDifference [num outer-arr]
-  (let [differ 
+(defn diagonalDifference [num arr]
+  (let [result 
         (abs
         (apply +
-               (for [item (range num)] 
+               (for [item (range (count arr))] 
                  (- 
-                  (nth (nth outer-arr item) (- (- num 1) item)) 
-                  (nth (nth outer-arr item) item)
+                  (nth (nth arr item) (- (- num 1) item)) 
+                  (nth (nth arr item) item)
                   )
-    )))] differ))
+    )))] result))
   
 
 (diagonalDifference 3 arr)
+
+(for [item (range (count (nth arr 0)))]
+  (println item))
