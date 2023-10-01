@@ -6,25 +6,29 @@
 
 arr
 (defn repeat-n [numtimes arr outer-item]
-  (dotimes [item numtimes]
-    (cond 
-      (= outer-item item) 
-      (println 
-       (str 
-        item 
-        " - " 
-        (nth arr item
-             ))))))
+  (dotimes [inner-item numtimes] 
+    (def inner-vector (nth arr outer-item))
+    (cond (= outer-item inner-item) 
+          (println 
+           (str  
+            " INNER T (" outer-item " " inner-item ")"  
+            (nth inner-vector inner-item))) 
+          :else 
+          (println 
+           " ";(str "INNER F" outer-item " - " inner-item)
+           )
+          )
+))
 
-(repeat-n 3 [10 20 30] 1)
+(repeat-n 3 [10 [10 50 30] 30] 1)
 
-(defn outer-mat [numtimes arra one]
+(defn outer-mat [numtimes arra ]
   (dotimes [item numtimes]
     (repeat-n numtimes arra item)
     )
   )
 
-(outer-mat 3 arr 1)
+(outer-mat 3 arr )
 
 (defn sh-current [n arr]
   (dotimes [i n]
