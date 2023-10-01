@@ -70,3 +70,4 @@ ClojureRepl/*.user.clj
 
 db.transit.json
 .calva/output-window/output.calva-repl
+src/.calva/output-window/output.calva-repl
